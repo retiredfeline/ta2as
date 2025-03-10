@@ -237,6 +237,18 @@ int checkWordsModify(AsmLine *ln)
     return waslabel;
 }
 
+char *strlwr(char *str)
+{
+    unsigned char *p = (unsigned char *)str;
+
+    while (*p) {
+       *p = tolower((unsigned char)*p);
+        p++;
+    }
+
+    return str;
+}
+
 /** If given operand is a register in Intel syntax, returns the register size.
  */
 int cpuRegisterSize(const ChBuf op)
